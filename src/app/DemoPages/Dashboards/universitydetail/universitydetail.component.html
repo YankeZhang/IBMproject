@@ -1,0 +1,108 @@
+<app-page-title [heading]="heading" [subheading]="subheading" [icon]="icon"></app-page-title>
+
+
+    
+
+      <div class="row">
+        <div class="col-md-6">
+          
+          <div class="card main-card mb-3">
+            <div class="card-header">
+              Recent Requests
+            </div>
+            <div class="card-body">
+              <apx-chart
+                [series]="[
+                {
+                  name: 'Staff',
+                  type: 'column',
+                  data: [16, 12, 15, 8, 3, 4, 14, 13, 12, 13, 20]
+                },
+                         {
+                          name: 'Request',
+                          type: 'area',
+                          data: [23, 21, 22, 10, 5, 6, 17, 22, 19, 27, 31]
+                        }
+                      ]"
+                [chart]="{
+                        height: '350',
+                        type: 'line',
+                        stacked: false
+                      }"
+                [stroke]="{
+                        width: [0, 2, 5],
+                        curve: 'smooth'
+                      }"
+                [plotOptions]="{
+                        bar: {
+                          columnWidth: '50%'
+                        }
+                      }"
+                [fill]="{
+                        opacity: [1, 0.25],
+                        gradient: {
+                          inverseColors: false,
+                          shade: 'light',
+                          type: 'vertical',
+                          opacityFrom: 0.85,
+                          opacityTo: 0.55,
+                          stops: [0, 100, 100, 100]
+                          }
+                      }"
+      
+                [labels]="['01/01/2019', '02/01/2019', '03/01/2019', '04/01/2019', '05/01/2019', '06/01/2019', '07/01/2019', '08/01/2019', '09/01/2019', '10/01/2019', '11/01/2019']"
+      
+                [xaxis]="{
+                        type: 'datetime'
+                      }"
+                [yaxis]="{
+                        title: {
+                          text: 'Number'
+                        },
+                        min: 0
+                      }"
+      
+              ></apx-chart>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card main-card mb-3">
+            <div class="card-header">
+              Event Type
+            </div>
+            <div class="card-body">
+                <apx-chart
+                [series]="[72, 55, 13, 77]"
+                [labels]="['Lecture', 'Student Support', 'Hachathon','General Event']"
+                [chart]="{
+                  height: '350',
+                  type: 'pie'
+                }"
+              ></apx-chart>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+  
+    <ngb-tabset class="tabs-animated tabs-animated-shadow">
+      <ngb-tab>
+        <ng-template ngbTabTitle><span>Request</span></ng-template>
+        <ng-template ngbTabContent>
+            <app-requests></app-requests>
+          
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab>
+        <ng-template ngbTabTitle><span>Staff</span></ng-template>
+        <ng-template ngbTabContent>
+            <app-staff></app-staff>
+        </ng-template>
+      </ngb-tab>
+    </ngb-tabset>
+    
+
+
+
