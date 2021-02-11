@@ -39,7 +39,7 @@
     "angular2-ladda": "^2.0.1",
     "angular2-text-mask": "^9.0.0",
     "animate-sass": "^0.8.2",
-    "apexcharts": "^3.6.5",
+    "apexcharts": "^3.24.0",
     "bootstrap": "4.2.1",
     "chart.js": "^2.8.0",
     "chartjs-adapter-luxon": "^0.1.1",
